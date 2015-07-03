@@ -29,6 +29,17 @@ void Lexical_Analyzer::print_filestring(){
 void Lexical_Analyzer::print_to_outfile(string token, int linenumber, bool i_d, bool undefined){
     char c = token[0];
     token = token.c_str();
+    
+    switch (b) {
+        case <#constant#>:
+            <#statements#>
+            break;
+            
+        default:
+            break;
+    }
+    
+    
     if(token == "."){
         Token t = Token("PERIOD", token, linenumber);
         token_vector.push_back(t);
