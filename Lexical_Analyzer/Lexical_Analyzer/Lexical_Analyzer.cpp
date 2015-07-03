@@ -26,7 +26,7 @@ void Lexical_Analyzer::print_filestring(){
     cout << filestring << "--" << endl;
 }
 
-void Lexical_Analyzer::print_to_outfile(string token, int linenumber, bool i_d, bool undefined){
+void Lexical_Analyzer::print_to_outfile(string token, int linenumber, bool i_d, bool undefined, int tokCategory){
     char c = token[0];
     token = token.c_str();
     
@@ -38,6 +38,23 @@ void Lexical_Analyzer::print_to_outfile(string token, int linenumber, bool i_d, 
         default:
             break;
     }
+    
+    int case1 = 1;
+    int case2 = 2;
+    int case3 = 3;
+    int case4 = 4;
+    int case5 = 5;
+    int case6 = 6;
+    int case7 = 7;
+    int case8 = 8;
+    int case9 = 9;
+    int case10 = 10;
+    int case11 = 11;
+    int case12 = 12;
+    int case13 = 13;
+    int case14 = 14;
+    int case15 = 15;
+    int case16 = 16;
     
     
     if(token == "."){
@@ -123,11 +140,12 @@ void Lexical_Analyzer::print_to_outfile(string token, int linenumber, bool i_d, 
     //cout << endl;
 }
 
-void Lexical_Analyzer::parse_file(string filename){
+void Lexical_Analyzer::parse_file(string filename, string outfile){
     string str;
     stringstream sss;
     string s;
     ss.open(filename.c_str());
+    ofs.open(outfile.c_str());
     string word;
     int line = 0;
     char c;
@@ -469,6 +487,7 @@ void Lexical_Analyzer::parse_file(string filename){
     }
     print_to_outfile("eof", line_count, false, false);
     ss.close();
+    ofs.close();
 }
 
 void Lexical_Analyzer::increase_token_count(){
@@ -487,8 +506,8 @@ vector<Token> Lexical_Analyzer::getToken_vector(){
 
 void Lexical_Analyzer::print_token_vector(){
     for(int i = 0; i < token_vector.size(); i++){
-        cout << token_vector[i].toString();
-        cout << endl;
+        
+        ofs << token_vector[i].toString();
     }
 }
 

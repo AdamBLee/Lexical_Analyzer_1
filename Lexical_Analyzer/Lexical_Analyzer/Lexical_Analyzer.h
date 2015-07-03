@@ -33,6 +33,7 @@ private:
     int token_count;
     int line_count;
     std::ifstream ss;
+    std::ofstream ofs;
     string filestring;
     vector<Token> token_vector;
     Token current_token;
@@ -41,11 +42,11 @@ public:
     void print_filestring();
     bool open_files(string filein, string fileout);
     bool infile_to_string(ifstream &filein);
-    void parse_file(string filename);
+    void parse_file(string filename, string outfile);
     Token getCurrentToken();
     void increase_token_count();
     void increase_line_count();
-    void print_to_outfile(string token, int linenumber, bool i_d, bool undefined);
+    void print_to_outfile(string token, int linenumber, bool i_d, bool undefined, int tokCategory);
     void print_token_vector();
     vector<Token> getToken_vector();
     int getTokenCount();

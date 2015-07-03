@@ -11,8 +11,8 @@
 
 int main(int argc, const char * argv[]) {
    
-    if(argc != 2){
-        std::cerr << "USAGE: argv[0]: Program Executable, argv[1]: INPUT_FILE" << std::endl;
+    if(argc != 3){
+        std::cerr << "USAGE: argv[0]: Program Executable, argv[1]: INPUT_FILE   argv[2]: OUTPUT_FILE" << std::endl;
         return 1;
     }
     Lexical_Analyzer LA;
